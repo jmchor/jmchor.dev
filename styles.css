@@ -1,0 +1,26 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr 15fr 1fr;
+}
+
+nav,
+main,
+footer {
+	border: 1px solid black;
+}
+
+main {
+}
+
+#nav {
+	position: sticky;
+	top: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
