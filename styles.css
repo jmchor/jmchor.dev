@@ -41,15 +41,15 @@ footer {
 
 .sidebar {
 	width: 200px;
-	height: calc(100vh - 40px);
+	height: calc(83vh - 40px);
 	grid-area: sidebar;
 	border: 1px solid black;
 }
 
 .container {
+	display: grid;
 	grid-area: main;
 	border: 1px solid black;
-	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 }
 
