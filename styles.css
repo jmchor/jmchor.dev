@@ -16,8 +16,7 @@ body {
 	margin: 0;
 	height: var(--viewheight);
 	display: grid;
-	grid-template-columns: 200px 3fr 1fr;
-
+	/* grid-template-columns: repeat(3, 1fr); */
 	grid-template-areas:
 		'header header header'
 		'navbar navbar navbar'
