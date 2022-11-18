@@ -21,4 +21,8 @@ function fixNav() {
 	}
 }
 
-window.addEventListener('scroll', fixNav);
+window.addEventListener('scroll', () => {
+	if (window.innerWidth > 700) {
+		fixNav();
+	}
+});
