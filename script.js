@@ -6,6 +6,7 @@ const headerLogo = document.querySelector('#header__logo');
 
 function toggleSideMenu() {
 	list.toggle('display__there');
+	[];
 }
 
 sideMenuButton.addEventListener('click', toggleSideMenu);
