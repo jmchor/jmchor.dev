@@ -1,0 +1,6 @@
+.one {
+	grid-column: 3/4;
+	width: 100%;
+	background-image: url(../02-img/hans_opacity70.png);
+	background-size: cover;
+}
