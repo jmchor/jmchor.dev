@@ -2,5 +2,6 @@
 	grid-column: 3/4;
 	width: 100%;
 	background-image: url(../02-img/hans_opacity70.png);
-	background-size: cover;
+	background-size: 1000px;
+	background-position: 25rem;
 }
