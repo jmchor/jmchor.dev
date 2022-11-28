@@ -8,7 +8,7 @@
 	--blue: #2630be;
 	--red: #e64444;
 	--viewheight: 120vh;
-	--headerHeight: 20vh;
+	--headerHeight: 210px;
 }
 
 body {
@@ -36,7 +36,7 @@ header {
 	height: var(--headerHeight);
 }
 header img#header__logo {
-	transition: all 0.1s;
+	transition: all 0.25s;
 }
 .nav {
 	height: 5rem;
@@ -119,14 +119,9 @@ body.fixed-nav .nav {
 	flex: 1;
 }
 
-.fixed-nav .under_construction {
-	transform: scale(1.21);
-	transition: all 0.5s;
-}
-
 .shrink {
 	transform: scale(0.3);
-	transition: all 0.1s;
+	transition: all 0.25s;
 }
 
 .footer {
@@ -142,6 +137,12 @@ article {
 	justify-items: center;
 	align-content: center;
 }
+
+/* @media (max-width: 1500px) {
+	header {
+		height: 30vh;
+	}
+} */
 
 @media (max-width: 700px) {
 	header {
