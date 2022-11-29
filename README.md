@@ -1,3 +1,3 @@
-# devprojects-revamp
+# jmchor.dev homepage
 
-Revamp of my revamp of my original website
+My personal portfolio website including projects, resumes and uses
