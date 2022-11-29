@@ -1,0 +1,19 @@
+{
+  "name": "jmchor.dev",
+  "version": "1.0.0",
+  "description": "My personal portfolio website including projects, resumes and uses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmchor/jmchor.dev.git"
+  },
+  "author": "Johannes Chorzempa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmchor/jmchor.dev/issues"
+  },
+  "homepage": "https://github.com/jmchor/jmchor.dev#readme"
+}
