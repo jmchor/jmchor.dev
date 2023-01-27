@@ -4,7 +4,7 @@ const list = sideBar.classList;
 const nav = document.querySelector('.nav') as HTMLDivElement;
 const headerLogo = document.querySelector('#header__logo') as HTMLImageElement;
 
-function toggleSideMenu() {
+function toggleSideMenu(): void {
 	list.toggle('display__there');
 }
 
@@ -16,7 +16,7 @@ const topOfNav = nav.offsetTop;
 // 	headerLogo.classList.toggle('shrink');
 // }
 
-function fixNav() {
+function fixNav(): void {
 	if (window.scrollY >= topOfNav) {
 		document.body.style.paddingTop = `${nav.offsetHeight}px`;
 		document.body.classList.add('fixed-nav');
@@ -26,7 +26,7 @@ function fixNav() {
 	}
 }
 
-function scrollFunction() {
+function scrollFunction(): void {
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		headerLogo.style.height = '50px';
 	} else {
