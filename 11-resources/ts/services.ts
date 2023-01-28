@@ -2,34 +2,26 @@
 const aboutMe = document.getElementById('about__me') as HTMLDivElement;
 const platform = document.getElementById('platform') as HTMLDivElement;
 const textBox = document.createElement('div');
-textBox.style.width = '100%';
-textBox.style.height = '10rem';
-textBox.style.backgroundColor = 'white';
-textBox.style.color = 'black';
-textBox.style.border = '1px solid black';
-textBox.style.display = 'none';
+textBox.setAttribute('id', 'textbox');
 
 const netlify = document.createElement('div');
 netlify.setAttribute('id', 'netlify');
 netlify.setAttribute('class', 'service');
-
-netlify.innerHTML = `
-
-        <img src="../../11-resources/02-img/netlify.svg" />
-
-
-`;
+netlify.innerHTML = ` <img src="../../11-resources/02-img/netlify.svg" />`;
 
 const wordpress = document.createElement('div');
 wordpress.setAttribute('id', 'wordpress');
 wordpress.setAttribute('class', 'service');
+wordpress.innerHTML = `<img src="../../11-resources/02-img/wordpress-blue.svg" />`;
 
-wordpress.innerHTML = `
-        <img src="../../11-resources/02-img/wordpress-blue.svg" />
-`;
+const linode = document.createElement('div');
+linode.setAttribute('id', 'linode');
+linode.setAttribute('class', 'service');
+linode.innerHTML = `<img src="../../11-resources/02-img/linode.svg" />`;
 
 platform.appendChild(netlify);
 platform.appendChild(wordpress);
+platform.appendChild(linode);
 
 const allServices = document.querySelectorAll('.service');
 
@@ -45,6 +37,9 @@ function displayText(e: MouseEvent) {
 	} else if (parent === 'wordpress') {
 		textBox.innerHTML = `
 	        <p>Wordpress is a service that</p>`;
+	} else if (parent === 'linode') {
+		textBox.innerHTML = `
+	        <p>linode is a service that</p>`;
 	}
 	aboutMe.appendChild(textBox);
 	textBox.style.display = 'block';
