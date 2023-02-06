@@ -1,5 +1,10 @@
-* {
+html {
 	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
 }
 
 :root {
@@ -24,7 +29,6 @@ body {
 		'main main main'
 		'main main main'
 		'footer footer footer';
-
 }
 
 header {
