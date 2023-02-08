@@ -1,3 +1,4 @@
+// eslint-disable-next-line eslint-comments/disable-enable-pair
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 const aboutMe = document.getElementById('about__me') as HTMLDivElement;
 const platform = document.getElementById('platform') as HTMLDivElement;
@@ -26,7 +27,7 @@ platform.appendChild(linode);
 const allServices = document.querySelectorAll('.service');
 
 function displayText(e: MouseEvent) {
-	// @ts-ignore
+	// @ts-expect-error
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
 	const parent: string = e.target.parentElement.id;
 
@@ -46,7 +47,7 @@ function displayText(e: MouseEvent) {
 }
 
 allServices.forEach((service) => {
-	// @ts-ignore
+	// @ts-expect-error
 	service.addEventListener('mouseover', displayText);
 });
 
