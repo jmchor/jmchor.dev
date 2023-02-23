@@ -1,47 +1,52 @@
 "use strict";
-
-// src/services.ts
-var aboutMe = document.getElementById("about__me");
-var platform = document.getElementById("platform");
-var textBox = document.createElement("div");
-textBox.setAttribute("id", "textbox");
-var netlify = document.createElement("div");
-netlify.setAttribute("id", "netlify");
-netlify.setAttribute("class", "service");
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+const aboutMe = document.getElementById('about__me');
+const platform = document.getElementById('platform');
+const textBox = document.createElement('div');
+textBox.setAttribute('id', 'textbox');
+const netlify = document.createElement('div');
+netlify.setAttribute('id', 'netlify');
+netlify.setAttribute('class', 'service');
 netlify.innerHTML = ` <img src="../../11-resources/02-img/netlify.svg" />`;
-var wordpress = document.createElement("div");
-wordpress.setAttribute("id", "wordpress");
-wordpress.setAttribute("class", "service");
+const wordpress = document.createElement('div');
+wordpress.setAttribute('id', 'wordpress');
+wordpress.setAttribute('class', 'service');
 wordpress.innerHTML = `<img src="../../11-resources/02-img/wordpress-blue.svg" />`;
-var linode = document.createElement("div");
-linode.setAttribute("id", "linode");
-linode.setAttribute("class", "service");
+const linode = document.createElement('div');
+linode.setAttribute('id', 'linode');
+linode.setAttribute('class', 'service');
 linode.innerHTML = `<img src="../../11-resources/02-img/linode.svg" />`;
 platform.appendChild(netlify);
 platform.appendChild(wordpress);
 platform.appendChild(linode);
-var allServices = document.querySelectorAll(".service");
+const allServices = document.querySelectorAll('.service');
 function displayText(e) {
-  const parent = e.target.parentElement.id;
-  if (parent === "netlify") {
-    textBox.innerHTML = `
+    // @ts-expect-error
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
+    const parent = e.target.parentElement.id;
+    if (parent === 'netlify') {
+        textBox.innerHTML = `
 	        <p>Netlify is a service that</p>
 	    `;
-  } else if (parent === "wordpress") {
-    textBox.innerHTML = `
+    }
+    else if (parent === 'wordpress') {
+        textBox.innerHTML = `
 	        <p>Wordpress is a service that</p>`;
-  } else if (parent === "linode") {
-    textBox.innerHTML = `
+    }
+    else if (parent === 'linode') {
+        textBox.innerHTML = `
 	        <p>linode is a service that</p>`;
-  }
-  aboutMe.appendChild(textBox);
-  textBox.style.display = "block";
+    }
+    aboutMe.appendChild(textBox);
+    textBox.style.display = 'block';
 }
 allServices.forEach((service) => {
-  service.addEventListener("mouseover", displayText);
+    // @ts-expect-error
+    service.addEventListener('mouseover', displayText);
 });
 allServices.forEach((service) => {
-  service.addEventListener("mouseout", () => {
-    textBox.style.display = "none";
-  });
+    service.addEventListener('mouseout', () => {
+        textBox.style.display = 'none';
+    });
 });

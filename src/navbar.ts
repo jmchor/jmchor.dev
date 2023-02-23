@@ -1,8 +1,8 @@
-const sideMenuButton = document.querySelector('.sidemenu_button') as HTMLElement;
-const sideBar = document.querySelector('.sidebar') as HTMLElement;
+const sideMenuButton = document.querySelector('.sidemenu_button')!;
+const sideBar = document.querySelector('.sidebar')!;
 const list = sideBar.classList;
-const nav = document.querySelector('.nav') as HTMLDivElement;
-const headerLogo = document.querySelector('#header__logo') as HTMLImageElement;
+const nav = document.getElementById('nav')!;
+const headerLogo: HTMLImageElement = document.querySelector('#header__logo')!;
 
 function toggleSideMenu(): void {
 	list.toggle('display__there');
@@ -27,6 +27,7 @@ function fixNav(): void {
 }
 
 function scrollFunction(): void {
+	// eslint-disable-next-line prettier/prettier
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		headerLogo.style.height = '50px';
 	} else {

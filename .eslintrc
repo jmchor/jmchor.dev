@@ -17,7 +17,7 @@
 				"plugin:eslint-comments/recommended",
 				"plugin:@typescript-eslint/recommended-requiring-type-checking",
 				"plugin:@typescript-eslint/strict",
-				"prettier"
+				"plugin:prettier/recommended"
 			],
 
 			"parserOptions": {
