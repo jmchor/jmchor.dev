@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -91,6 +92,7 @@ header img#header__logo {
 	justify-content: center;
 	align-items: center;
 	text-transform: uppercase;
+	scroll-behavior: smooth;
 }
 body.fixed-nav .nav {
 	position: fixed;
