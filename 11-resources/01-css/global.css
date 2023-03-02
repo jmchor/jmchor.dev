@@ -42,7 +42,13 @@ header {
 	height: var(--headerHeight);
 }
 header img#header__logo {
+	opacity: 1;
 	transition: all 0.25s;
+}
+
+.smaller {
+	opacity: 0;
+	transform: scale(0.25);
 }
 .nav {
 	height: 5rem;

@@ -12,10 +12,6 @@ sideMenuButton.addEventListener('click', toggleSideMenu);
 
 const topOfNav = nav.offsetTop;
 
-// function shrinkLogo() {
-// 	headerLogo.classList.toggle('shrink');
-// }
-
 function fixNav(): void {
 	if (window.scrollY >= topOfNav) {
 		document.body.style.paddingTop = `${nav.offsetHeight}px`;
