@@ -1,52 +1,58 @@
 "use strict";
-// eslint-disable-next-line eslint-comments/disable-enable-pair
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-const aboutMe = document.getElementById('about__me');
-const platform = document.getElementById('platform');
-const textBox = document.createElement('div');
-textBox.setAttribute('id', 'textbox');
-const netlify = document.createElement('div');
-netlify.setAttribute('id', 'netlify');
-netlify.setAttribute('class', 'service');
-netlify.innerHTML = ` <img src="../../11-resources/02-img/netlify.svg" />`;
-const wordpress = document.createElement('div');
-wordpress.setAttribute('id', 'wordpress');
-wordpress.setAttribute('class', 'service');
-wordpress.innerHTML = `<img src="../../11-resources/02-img/wordpress-blue.svg" />`;
-const linode = document.createElement('div');
-linode.setAttribute('id', 'linode');
-linode.setAttribute('class', 'service');
-linode.innerHTML = `<img src="../../11-resources/02-img/linode.svg" />`;
-platform.appendChild(netlify);
-platform.appendChild(wordpress);
-platform.appendChild(linode);
-const allServices = document.querySelectorAll('.service');
+
+// src/services.ts
+var aboutMe = document.getElementById("about__me");
+var platform = document.getElementById("platform");
+var textBox = document.createElement("div");
+textBox.setAttribute("id", "textbox");
+var servicesArray = ["javascript", "typescript", "nodeJS", "mongodb", "wordpress", "netlify", "linode"];
+servicesArray.forEach((service) => {
+  const div = document.createElement("div");
+  div.setAttribute("id", service);
+  div.setAttribute("class", "service");
+  div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
+  platform.appendChild(div);
+});
+var allServices = document.querySelectorAll(".service");
 function displayText(e) {
-    // @ts-expect-error
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
-    const parent = e.target.parentElement.id;
-    if (parent === 'netlify') {
-        textBox.innerHTML = `
-	        <p>Netlify is a service that</p>
-	    `;
-    }
-    else if (parent === 'wordpress') {
-        textBox.innerHTML = `
-	        <p>Wordpress is a service that</p>`;
-    }
-    else if (parent === 'linode') {
-        textBox.innerHTML = `
-	        <p>linode is a service that</p>`;
-    }
-    aboutMe.appendChild(textBox);
-    textBox.style.display = 'block';
+  const parent = e.target.parentElement.id;
+  if (parent === "netlify") {
+    textBox.innerHTML = `
+			<p>Netlify is a service that</p>
+			<button onclick="closeTextbox()"> Close </button>
+		`;
+  } else if (parent === "wordpress") {
+    textBox.innerHTML = `
+		<button onclick="closeTextbox()"> Close </button>
+			<p>Wordpress is a service that</p>
+			<button onclick="closeTextbox()"> Close </button>`;
+  } else if (parent === "linode") {
+    textBox.innerHTML = `
+	        <p>linode is a service that</p>
+			<button onclick="closeTextbox()"> Close </button>`;
+  } else if (parent === "typescript") {
+    textBox.innerHTML = `
+	        <p>typescript is a service that</p>
+			<button onclick="closeTextbox()"> Close </button>`;
+  } else if (parent === "javascript") {
+    textBox.innerHTML = `
+		<p>javascript is a service that</p>
+		<button onclick="closeTextbox()"> Close </button>`;
+  } else if (parent === "nodeJS") {
+    textBox.innerHTML = `
+		<p>NodeJS makes JavaScript run on servers - together with Express.js and connected to databases, there are no bounds to the magic.</p>
+		<button onclick="closeTextbox()"> Close </button>`;
+  } else if (parent === "mongodb") {
+    textBox.innerHTML = `
+		<p>javascript is a service that</p>
+		<button onclick="closeTextbox()"> Close </button>`;
+  }
+  aboutMe.appendChild(textBox);
+  textBox.style.display = "flex";
 }
 allServices.forEach((service) => {
-    // @ts-expect-error
-    service.addEventListener('mouseover', displayText);
+  service.addEventListener("click", displayText);
 });
-allServices.forEach((service) => {
-    service.addEventListener('mouseout', () => {
-        textBox.style.display = 'none';
-    });
-});
+window.onload = () => {
+  document.querySelector(".quote").classList.add("fade-in");
+};
