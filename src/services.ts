@@ -26,11 +26,9 @@ function displayText(e: MouseEvent) {
 	if (parent === 'netlify') {
 		textBox.innerHTML = `
 			<p>Netlify is a service that</p>
-			<button onclick="closeTextbox()"> Close </button>
-		`;
+			<button onclick="closeTextbox()"> Close </button>`;
 	} else if (parent === 'wordpress') {
 		textBox.innerHTML = `
-		<button onclick="closeTextbox()"> Close </button>
 			<p>Wordpress is a service that</p>
 			<button onclick="closeTextbox()"> Close </button>`;
 	} else if (parent === 'linode') {
@@ -59,6 +57,7 @@ function displayText(e: MouseEvent) {
 }
 
 function closeTextbox(): void {
+	console.log('hello');
 	textBox.style.display = 'none';
 }
 
