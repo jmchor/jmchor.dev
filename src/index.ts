@@ -14,11 +14,13 @@ window.addEventListener('scroll', scrollFunction);
 // _________Services________________
 
 document.querySelectorAll('.service').forEach((service) => {
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
 	service.addEventListener('click', displayText);
 });
 
 window.onload = () => {
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
 	document.querySelector('.quote').classList.add('fade-in');
 	closeTextbox();

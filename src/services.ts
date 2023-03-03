@@ -62,7 +62,7 @@ allServices.forEach((service) => {
 });
 
 window.onload = () => {
-	document.querySelector('.quote').classList.add('fade-in');
+	document.querySelector('.quote')!.classList.add('fade-in');
 };
 
 // allServices.forEach((service) => {
