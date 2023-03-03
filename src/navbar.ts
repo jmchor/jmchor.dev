@@ -4,7 +4,7 @@ const list = sideBar.classList;
 const nav = document.getElementById('nav')!;
 const headerLogo: HTMLImageElement = document.querySelector('#header__logo')!;
 
-function toggleSideMenu(): void {
+export function toggleSideMenu(): void {
 	list.toggle('display__there');
 }
 
@@ -12,7 +12,7 @@ sideMenuButton.addEventListener('click', toggleSideMenu);
 
 const topOfNav = nav.offsetTop;
 
-function fixNav(): void {
+export function fixNav(): void {
 	if (window.scrollY >= topOfNav) {
 		document.body.style.paddingTop = `${nav.offsetHeight}px`;
 		document.body.classList.add('fixed-nav');
@@ -22,7 +22,7 @@ function fixNav(): void {
 	}
 }
 
-function scrollFunction(): void {
+export function scrollFunction(): void {
 	// eslint-disable-next-line prettier/prettier
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		headerLogo.style.height = '50px';
@@ -30,11 +30,3 @@ function scrollFunction(): void {
 		headerLogo.style.height = '200px';
 	}
 }
-
-window.addEventListener('scroll', () => {
-	if (window.innerWidth > 700) {
-		fixNav();
-	}
-});
-
-window.addEventListener('scroll', scrollFunction);

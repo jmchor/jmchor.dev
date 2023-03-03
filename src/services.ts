@@ -18,7 +18,7 @@ servicesArray.forEach((service) => {
 
 const allServices = document.querySelectorAll('.service');
 
-function displayText(e: MouseEvent) {
+export function displayText(e: MouseEvent) {
 	// @ts-expect-error
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
 	const parent: string = e.target.parentElement.id;
@@ -56,11 +56,6 @@ function displayText(e: MouseEvent) {
 	textBox.style.display = 'flex';
 }
 
-function closeTextbox(): void {
-	console.log('hello');
-	textBox.style.display = 'none';
-}
-
 allServices.forEach((service) => {
 	// @ts-expect-error
 	service.addEventListener('click', displayText);
@@ -75,3 +70,8 @@ window.onload = () => {
 // 		textBox.style.display = 'none';
 // 	});
 // });
+
+export function closeTextbox(): void {
+	console.log('hello');
+	textBox.style.display = 'none';
+}

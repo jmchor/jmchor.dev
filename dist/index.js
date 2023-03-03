@@ -1,29 +1,34 @@
 "use strict";
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+
+// src/navbar.ts
+var sideMenuButton = document.querySelector(".sidemenu_button");
+var sideBar = document.querySelector(".sidebar");
+var list = sideBar.classList;
+var nav = document.getElementById("nav");
+var headerLogo = document.querySelector("#header__logo");
+function toggleSideMenu() {
+  list.toggle("display__there");
+}
+sideMenuButton.addEventListener("click", toggleSideMenu);
+var topOfNav = nav.offsetTop;
+function fixNav() {
+  if (window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = `${nav.offsetHeight}px`;
+    document.body.classList.add("fixed-nav");
+  } else {
+    document.body.classList.remove("fixed-nav");
+    document.body.style.paddingTop = "0";
   }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+}
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    headerLogo.style.height = "50px";
+  } else {
+    headerLogo.style.height = "200px";
+  }
+}
 
 // src/services.ts
-var services_exports = {};
-__export(services_exports, {
-  closeTextbox: () => closeTextbox,
-  displayText: () => displayText
-});
-module.exports = __toCommonJS(services_exports);
 var aboutMe = document.getElementById("about__me");
 var platform = document.getElementById("platform");
 var textBox = document.createElement("div");
@@ -81,8 +86,19 @@ function closeTextbox() {
   console.log("hello");
   textBox.style.display = "none";
 }
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  closeTextbox,
-  displayText
+
+// src/index.ts
+document.querySelector(".sidemenu_button").addEventListener("click", toggleSideMenu);
+window.addEventListener("scroll", () => {
+  if (window.innerWidth > 700) {
+    fixNav();
+  }
 });
+window.addEventListener("scroll", scrollFunction);
+document.querySelectorAll(".service").forEach((service) => {
+  service.addEventListener("click", displayText);
+});
+window.onload = () => {
+  document.querySelector(".quote").classList.add("fade-in");
+  closeTextbox();
+};
