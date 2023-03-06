@@ -1,27 +1,55 @@
-// eslint-disable-next-line eslint-comments/disable-enable-pair
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
+export function renderServices() {
+	const platform = document.getElementById('platform') as HTMLDivElement;
+	const divText = document.createElement('div');
+	divText.setAttribute('id', 'divText');
 
-const aboutMe = document.getElementById('about__me') as HTMLDivElement;
-const platform = document.getElementById('platform') as HTMLDivElement;
-const textBox = document.createElement('div');
-textBox.setAttribute('id', 'textbox');
+	const servicesArray: string[] = [
+		'JavaScript',
+		'TypeScript',
+		'NodeJS',
+		'MongoDB',
+		'Wordpress',
+		'netlify',
+		'Linode',
+		'Git',
+		'GitHub',
+		'VSCode',
+		'HTML',
+		'CSS',
+		'Bootstrap',
+	];
 
-const servicesArray: string[] = ['javascript', 'typescript', 'nodeJS', 'mongodb', 'wordpress', 'netlify', 'linode'];
+	servicesArray.forEach((service) => {
+		const outerContainer = document.createElement('div');
+		outerContainer.setAttribute('id', 'outer-container');
+		const div = document.createElement('div');
+		div.setAttribute('id', service);
+		div.setAttribute('class', 'service');
+		div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
 
-servicesArray.forEach((service) => {
-	const div = document.createElement('div');
-	div.setAttribute('id', service);
-	div.setAttribute('class', 'service');
-	div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
-	platform.appendChild(div);
-});
+		const textContainer = document.createElement('div');
+		textContainer.setAttribute('id', 'text-container');
+		textContainer.innerHTML = `<p>${service}</p>`;
 
-const allServices = document.querySelectorAll('.service');
+		outerContainer.appendChild(div);
+		outerContainer.appendChild(textContainer);
+		platform.appendChild(outerContainer);
+
+		// platform.appendChild(div);
+	});
+}
+
+// WARN function displayText not imported in index.js
 
 export function displayText(e: MouseEvent) {
 	// @ts-expect-error
 	// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
 	const parent: string = e.target.parentElement.id;
+	const allServices = document.querySelectorAll('.service');
+	const aboutMe = document.getElementById('about__me') as HTMLDivElement;
+	const textBox = document.createElement('div');
+	textBox.setAttribute('id', 'textbox');
 
 	if (parent === 'netlify') {
 		textBox.innerHTML = `
@@ -33,11 +61,11 @@ export function displayText(e: MouseEvent) {
 			<button onclick="closeTextbox()"> Close </button>`;
 	} else if (parent === 'linode') {
 		textBox.innerHTML = `
-	        <p>linode is a service that</p>
+		<p>linode is a service that</p>
 			<button onclick="closeTextbox()"> Close </button>`;
 	} else if (parent === 'typescript') {
 		textBox.innerHTML = `
-	        <p>typescript is a service that</p>
+		<p>typescript is a service that</p>
 			<button onclick="closeTextbox()"> Close </button>`;
 	} else if (parent === 'javascript') {
 		textBox.innerHTML = `
@@ -52,26 +80,23 @@ export function displayText(e: MouseEvent) {
 		<p>javascript is a service that</p>
 		<button onclick="closeTextbox()"> Close </button>`;
 	}
+
 	aboutMe.appendChild(textBox);
 	textBox.style.display = 'flex';
+	allServices.forEach((service) => {
+		// @ts-expect-error
+		service.addEventListener('click', displayText);
+	});
 }
-
-allServices.forEach((service) => {
-	// @ts-expect-error
-	service.addEventListener('click', displayText);
-});
-
-window.onload = () => {
-	document.querySelector('.quote')!.classList.add('fade-in');
-};
 
 // allServices.forEach((service) => {
 // 	service.addEventListener('mouseout', () => {
 // 		textBox.style.display = 'none';
 // 	});
 // });
-
+// WARN function closeTextbox not imported in index.js
 export function closeTextbox(): void {
-	console.log('hello');
+	const textBox = document.querySelector('#textbox') as HTMLDivElement;
+
 	textBox.style.display = 'none';
 }

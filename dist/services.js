@@ -21,24 +21,50 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var services_exports = {};
 __export(services_exports, {
   closeTextbox: () => closeTextbox,
-  displayText: () => displayText
+  displayText: () => displayText,
+  renderServices: () => renderServices
 });
 module.exports = __toCommonJS(services_exports);
-var aboutMe = document.getElementById("about__me");
-var platform = document.getElementById("platform");
-var textBox = document.createElement("div");
-textBox.setAttribute("id", "textbox");
-var servicesArray = ["javascript", "typescript", "nodeJS", "mongodb", "wordpress", "netlify", "linode"];
-servicesArray.forEach((service) => {
-  const div = document.createElement("div");
-  div.setAttribute("id", service);
-  div.setAttribute("class", "service");
-  div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
-  platform.appendChild(div);
-});
-var allServices = document.querySelectorAll(".service");
+function renderServices() {
+  const platform = document.getElementById("platform");
+  const divText = document.createElement("div");
+  divText.setAttribute("id", "divText");
+  const servicesArray = [
+    "JavaScript",
+    "TypeScript",
+    "NodeJS",
+    "MongoDB",
+    "Wordpress",
+    "netlify",
+    "Linode",
+    "Git",
+    "GitHub",
+    "VSCode",
+    "HTML",
+    "CSS",
+    "Bootstrap"
+  ];
+  servicesArray.forEach((service) => {
+    const outerContainer = document.createElement("div");
+    outerContainer.setAttribute("id", "outer-container");
+    const div = document.createElement("div");
+    div.setAttribute("id", service);
+    div.setAttribute("class", "service");
+    div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
+    const textContainer = document.createElement("div");
+    textContainer.setAttribute("id", "text-container");
+    textContainer.innerHTML = `<p>${service}</p>`;
+    outerContainer.appendChild(div);
+    outerContainer.appendChild(textContainer);
+    platform.appendChild(outerContainer);
+  });
+}
 function displayText(e) {
   const parent = e.target.parentElement.id;
+  const allServices = document.querySelectorAll(".service");
+  const aboutMe = document.getElementById("about__me");
+  const textBox = document.createElement("div");
+  textBox.setAttribute("id", "textbox");
   if (parent === "netlify") {
     textBox.innerHTML = `
 			<p>Netlify is a service that</p>
@@ -49,11 +75,11 @@ function displayText(e) {
 			<button onclick="closeTextbox()"> Close </button>`;
   } else if (parent === "linode") {
     textBox.innerHTML = `
-	        <p>linode is a service that</p>
+		<p>linode is a service that</p>
 			<button onclick="closeTextbox()"> Close </button>`;
   } else if (parent === "typescript") {
     textBox.innerHTML = `
-	        <p>typescript is a service that</p>
+		<p>typescript is a service that</p>
 			<button onclick="closeTextbox()"> Close </button>`;
   } else if (parent === "javascript") {
     textBox.innerHTML = `
@@ -70,19 +96,17 @@ function displayText(e) {
   }
   aboutMe.appendChild(textBox);
   textBox.style.display = "flex";
+  allServices.forEach((service) => {
+    service.addEventListener("click", displayText);
+  });
 }
-allServices.forEach((service) => {
-  service.addEventListener("click", displayText);
-});
-window.onload = () => {
-  document.querySelector(".quote").classList.add("fade-in");
-};
 function closeTextbox() {
-  console.log("hello");
+  const textBox = document.querySelector("#textbox");
   textBox.style.display = "none";
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   closeTextbox,
-  displayText
+  displayText,
+  renderServices
 });

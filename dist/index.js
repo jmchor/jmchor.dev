@@ -29,62 +29,39 @@ function scrollFunction() {
 }
 
 // src/services.ts
-var aboutMe = document.getElementById("about__me");
-var platform = document.getElementById("platform");
-var textBox = document.createElement("div");
-textBox.setAttribute("id", "textbox");
-var servicesArray = ["javascript", "typescript", "nodeJS", "mongodb", "wordpress", "netlify", "linode"];
-servicesArray.forEach((service) => {
-  const div = document.createElement("div");
-  div.setAttribute("id", service);
-  div.setAttribute("class", "service");
-  div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
-  platform.appendChild(div);
-});
-var allServices = document.querySelectorAll(".service");
-function displayText(e) {
-  const parent = e.target.parentElement.id;
-  if (parent === "netlify") {
-    textBox.innerHTML = `
-			<p>Netlify is a service that</p>
-			<button onclick="closeTextbox()"> Close </button>`;
-  } else if (parent === "wordpress") {
-    textBox.innerHTML = `
-			<p>Wordpress is a service that</p>
-			<button onclick="closeTextbox()"> Close </button>`;
-  } else if (parent === "linode") {
-    textBox.innerHTML = `
-	        <p>linode is a service that</p>
-			<button onclick="closeTextbox()"> Close </button>`;
-  } else if (parent === "typescript") {
-    textBox.innerHTML = `
-	        <p>typescript is a service that</p>
-			<button onclick="closeTextbox()"> Close </button>`;
-  } else if (parent === "javascript") {
-    textBox.innerHTML = `
-		<p>javascript is a service that</p>
-		<button onclick="closeTextbox()"> Close </button>`;
-  } else if (parent === "nodeJS") {
-    textBox.innerHTML = `
-		<p>NodeJS makes JavaScript run on servers - together with Express.js and connected to databases, there are no bounds to the magic.</p>
-		<button onclick="closeTextbox()"> Close </button>`;
-  } else if (parent === "mongodb") {
-    textBox.innerHTML = `
-		<p>javascript is a service that</p>
-		<button onclick="closeTextbox()"> Close </button>`;
-  }
-  aboutMe.appendChild(textBox);
-  textBox.style.display = "flex";
-}
-allServices.forEach((service) => {
-  service.addEventListener("click", displayText);
-});
-window.onload = () => {
-  document.querySelector(".quote").classList.add("fade-in");
-};
-function closeTextbox() {
-  console.log("hello");
-  textBox.style.display = "none";
+function renderServices() {
+  const platform = document.getElementById("platform");
+  const divText = document.createElement("div");
+  divText.setAttribute("id", "divText");
+  const servicesArray = [
+    "JavaScript",
+    "TypeScript",
+    "NodeJS",
+    "MongoDB",
+    "Wordpress",
+    "netlify",
+    "Linode",
+    "Git",
+    "GitHub",
+    "VSCode",
+    "HTML",
+    "CSS",
+    "Bootstrap"
+  ];
+  servicesArray.forEach((service) => {
+    const outerContainer = document.createElement("div");
+    outerContainer.setAttribute("id", "outer-container");
+    const div = document.createElement("div");
+    div.setAttribute("id", service);
+    div.setAttribute("class", "service");
+    div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
+    const textContainer = document.createElement("div");
+    textContainer.setAttribute("id", "text-container");
+    textContainer.innerHTML = `<p>${service}</p>`;
+    outerContainer.appendChild(div);
+    outerContainer.appendChild(textContainer);
+    platform.appendChild(outerContainer);
+  });
 }
 
 // src/index.ts
@@ -100,5 +77,5 @@ document.querySelectorAll(".service").forEach((service) => {
 });
 window.onload = () => {
   document.querySelector(".quote").classList.add("fade-in");
-  closeTextbox();
+  renderServices();
 };

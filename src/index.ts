@@ -1,5 +1,5 @@
 import { fixNav, scrollFunction, toggleSideMenu } from './navbar';
-import { closeTextbox, displayText } from './services';
+import { renderServices } from './services';
 
 document.querySelector('.sidemenu_button')!.addEventListener('click', toggleSideMenu);
 
@@ -23,7 +23,7 @@ window.onload = () => {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-expect-error
 	document.querySelector('.quote').classList.add('fade-in');
-	closeTextbox();
+	renderServices();
 };
 
 //--------------------------------

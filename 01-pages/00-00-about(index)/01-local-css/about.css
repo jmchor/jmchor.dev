@@ -1,10 +1,10 @@
 .one {
 	height: 65rem;
 	width: 100%;
-	background-image: url(../02-img/hanshead-removebg-half.png);
+	background-image: url(../02-img/headshot_bg_landing.png);
 	background-repeat: no-repeat;
-	background-position: right;
-	background-size: contain;
+	background-position: 110rem 1rem;
+	background-size: 85rem;
 	z-index: -100;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -17,6 +17,14 @@
 	flex-direction: column;
 	height: 80rem;
 	background-color: #2d9ab3;
+	justify-content: start;
+	align-items: center;
+}
+.three {
+	display: flex;
+	flex-direction: column;
+	height: 80rem;
+	background-color: #fbd780;
 	justify-content: start;
 	align-items: center;
 }
@@ -63,12 +71,24 @@
 	line-height: 2em;
 	text-align: justify;
 }
+#projects-face {
+	margin-top: 15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	color: rgb(0, 0, 0);
+	font-size: 22px;
+	line-height: 2em;
+	text-align: justify;
+}
 
 #platform {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	width: 33rem;
+	width: 80%;
 	height: fit-content;
 	padding: 1rem;
 	gap: 10px;
@@ -78,24 +98,53 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: fit-content;
-	border: 1px solid black;
-	padding: 0.5rem;
-	background-color: white;
-	border-radius: 10px;
 }
 
-.service:hover {
+#outer-container:hover {
 	transform: scale(1.1);
 }
 
 .service img {
-	width: 6rem;
-	height: 6rem;
+	width: 2rem;
+	height: 2rem;
 	padding: 0.05rem;
 }
 
-#textbox {
+#outer-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	height: fit-content;
+	border: 1px solid black;
+	padding: 0.15rem 0.35rem;
+	background-color: white;
+	border-radius: 10px;
+	color: black;
+}
+
+#text-container {
+	padding: 0px 5px 0px 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+}
+
+#text-container p {
+	margin: 0;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+@media screen and (max-width: 1440px) {
+	#about__me {
+		width: 80%;
+	}
+}
+
+/* #textbox {
 	display: none;
 	flex-direction: column;
 	justify-content: center;
@@ -105,11 +154,5 @@
 	color: white;
 	padding: 10px;
 	font-size: 18px;
-	line-height: 1.2em;
-}
-
-@media screen and (max-width: 1440px) {
-	#about__me {
-		width: 80%;
-	}
-}
+	line-height: 1em;
+} */
