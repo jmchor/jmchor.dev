@@ -1,10 +1,10 @@
 .one {
-	height: 65rem;
+	height: calc(100vh - 13.125rem);
 	width: 100%;
-	background-image: url(../02-img/headshot_bg_landing.png);
+	background-image: url(../01-img/headshot_bg_landing.png);
 	background-repeat: no-repeat;
-	background-position: 110rem 1rem;
-	background-size: 85rem;
+	background-position: right -45% bottom 65%;
+	background-size: 75rem;
 	z-index: -100;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -15,15 +15,20 @@
 .two {
 	display: flex;
 	flex-direction: column;
-	height: 80rem;
+	height: 100vh;
 	background-color: #2d9ab3;
 	justify-content: start;
 	align-items: center;
+	background-image: url(../01-img/headshot_bg_landing.png);
+	background-repeat: no-repeat;
+	background-position: right 135% bottom 45%;
+	background-size: 76rem;
+	z-index: -100;
 }
 .three {
 	display: flex;
 	flex-direction: column;
-	height: 80rem;
+	height: 100rem;
 	background-color: #fbd780;
 	justify-content: start;
 	align-items: center;
@@ -71,17 +76,10 @@
 	line-height: 2em;
 	text-align: justify;
 }
-#projects-face {
-	margin-top: 15rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
-	color: rgb(0, 0, 0);
+
+#jc_quote {
+	font-family: 'MonoLisa', monospace;
 	font-size: 22px;
-	line-height: 2em;
-	text-align: justify;
 }
 
 #platform {

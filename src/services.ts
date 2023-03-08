@@ -26,7 +26,7 @@ export function renderServices() {
 		const div = document.createElement('div');
 		div.setAttribute('id', service);
 		div.setAttribute('class', 'service');
-		div.innerHTML = `<img src="../../11-resources/02-img/${service}.png" />`;
+		div.innerHTML = `<img src="../../11-resources/11-img/${service}.png" />`;
 
 		const textContainer = document.createElement('div');
 		textContainer.setAttribute('id', 'text-container');
