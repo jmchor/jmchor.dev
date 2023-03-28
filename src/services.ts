@@ -1,3 +1,5 @@
+/* eslint-disable eslint-comments/disable-enable-pair */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
 export function renderServices() {
 	const platform = document.getElementById('platform') as HTMLDivElement;
@@ -9,6 +11,8 @@ export function renderServices() {
 		'TypeScript',
 		'NodeJS',
 		'MongoDB',
+		'React',
+		'Express',
 		'Wordpress',
 		'netlify',
 		'Linode',
@@ -38,6 +42,9 @@ export function renderServices() {
 
 		// platform.appendChild(div);
 	});
+
+	const reactService = document.getElementById('React')?.parentElement as HTMLDivElement;
+	reactService.classList.add('locked');
 }
 
 // WARN function displayText not imported in index.js
