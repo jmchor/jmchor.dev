@@ -69,7 +69,7 @@ html {
 	width: 4rem;
 }
 
-#about__me {
+#about-me {
 	margin-top: 15rem;
 	display: flex;
 	flex-direction: column;
@@ -79,7 +79,13 @@ html {
 	color: rgb(255, 255, 255);
 	font-size: 22px;
 	line-height: 2em;
-	text-align: justify;
+	text-align: center;
+}
+
+#about-me p {
+	line-height: 1.4em;
+	font-size: 24px;
+	margin-bottom: 5rem;
 }
 
 #jc_quote {
@@ -155,7 +161,7 @@ html {
 	font-size: 22px;
 	line-height: 2em;
 	text-align: justify;
-	margin-top: 2rem;
+	margin-top: 5rem;
 }
 
 #resume img {
