@@ -209,6 +209,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	gap: 2px;
+	color: white;
 }
 
 article {
@@ -226,7 +227,7 @@ a {
 	}
 } */
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
 	header {
 		display: none;
 	}
@@ -264,14 +265,24 @@ a {
 		position: sticky;
 	}
 
-	.fixed-nav .logo.navmenu {
-		max-width: 700px;
-		flex: 1;
+	.sidebar ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.sidebar a {
+		font-size: 1.5rem;
+		color: white;
+		text-decoration: none;
+		text-transform: lowercase;
+		font-weight: 900;
 	}
 
 	footer {
 		height: 7vh;
-		color: white;
+
 		font-size: 12px;
 		text-align: center;
 	}

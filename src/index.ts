@@ -3,8 +3,12 @@ import { renderServices } from './services';
 
 document.querySelector('.sidemenu_button')!.addEventListener('click', toggleSideMenu);
 
+document.querySelectorAll('.sidelink').forEach((link) => {
+	link.addEventListener('click', toggleSideMenu);
+});
+
 window.addEventListener('scroll', () => {
-	if (window.innerWidth > 700) {
+	if (window.innerHeight > 700) {
 		fixNav();
 	}
 });

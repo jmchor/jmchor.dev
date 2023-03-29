@@ -72,9 +72,12 @@ function renderServices() {
 // src/index.ts
 document.querySelector(".sidemenu_button").addEventListener("click", toggleSideMenu);
 window.addEventListener("scroll", () => {
-  if (window.innerWidth > 700) {
+  if (window.innerHeight > 700) {
     fixNav();
   }
+});
+document.querySelectorAll(".sidelink").forEach((link) => {
+  link.addEventListener("click", toggleSideMenu);
 });
 window.addEventListener("scroll", scrollFunction);
 document.querySelectorAll(".service").forEach((service) => {
