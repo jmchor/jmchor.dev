@@ -101,6 +101,7 @@ header img#header__logo {
 	grid-area: navbar;
 	z-index: 10;
 	width: 100%;
+	box-shadow: 0 5px 20px -10px #000;
 }
 .display__none {
 	width: 0;
