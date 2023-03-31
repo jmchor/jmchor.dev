@@ -156,7 +156,6 @@ header img#header__logo {
 }
 body.fixed-nav .nav {
 	position: fixed;
-	border-bottom: 1px solid black;
 }
 .nav .logo.navmenu {
 	max-width: 0;
