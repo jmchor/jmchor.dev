@@ -247,7 +247,6 @@ a {
 	}
 
 	.sidemenu_button {
-		border: 1px solid black;
 		height: 100%;
 		flex: 1;
 		display: flex;
