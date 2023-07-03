@@ -42,9 +42,6 @@ export function renderServices() {
 
 		// platform.appendChild(div);
 	});
-
-	const reactService = document.getElementById('React')?.parentElement as HTMLDivElement;
-	reactService.classList.add('locked');
 }
 
 // WARN function displayText not imported in index.js

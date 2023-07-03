@@ -26,7 +26,6 @@ __export(services_exports, {
 });
 module.exports = __toCommonJS(services_exports);
 function renderServices() {
-  var _a;
   const platform = document.getElementById("platform");
   const divText = document.createElement("div");
   divText.setAttribute("id", "divText");
@@ -61,8 +60,6 @@ function renderServices() {
     outerContainer.appendChild(textContainer);
     platform.appendChild(outerContainer);
   });
-  const reactService = (_a = document.getElementById("React")) == null ? void 0 : _a.parentElement;
-  reactService.classList.add("locked");
 }
 function displayText(e) {
   const parent = e.target.parentElement.id;

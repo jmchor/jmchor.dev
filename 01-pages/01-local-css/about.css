@@ -154,9 +154,9 @@ html {
 	transform: scale(1.1);
 }
 
-.locked {
+/* .locked {
 	opacity: 0.5;
-}
+} */
 
 .service img {
 	width: 2rem;
