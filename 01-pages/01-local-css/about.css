@@ -236,6 +236,36 @@ hr {
 	width: 50%;
 }
 
+@media screen and (min-width: 1025px) and (max-width: 1800px) {
+	.wrapper {
+		width: 80%;
+	}
+
+	.quote-about {
+		width: 90%;
+	}
+
+	#platform {
+		width: 100%;
+		padding: 3rem 2rem;
+	}
+
+	.picture img {
+		margin-top: 3rem;
+		border-radius: 50%;
+		background-color: var(--blue);
+		width: 200px;
+		padding: 0
+	}
+
+	.picture {
+		padding: 0px 0px 20px 0px
+	}
+
+
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.wrapper {
 		width: 90%;
